@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HyperTrack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //HyperTrack.initialize("YOUR_PUBLISHABLE_KEY")
+        // Make sure to go to the Info tab in your app settings
+        // and add permission strings for "Privacy - Location Always Usage Description"
+        // and "Privacy - Motion Usage Description"
+        HyperTrack.initialize(publishableKey: "pk_46284e60817285f42d5e1f3d57f687e955b90d39") { (error) in
+            /// perform post initialization actions
+            /// handle error if any
+        }
+
+        HyperTrack.requestLocationPermission { (error) in
+            /// handle error if any
+        }
+        ​​
+        HyperTrack.requestActivityPermission { (error) in
+            /// handle error if any
+        }
+
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

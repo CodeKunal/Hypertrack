@@ -12,6 +12,7 @@
 		0C00E8D8213AAAA700F29F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C00E8D6213AAAA700F29F2A /* Main.storyboard */; };
 		0C00E8DA213AAAA900F29F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C00E8D9213AAAA900F29F2A /* Assets.xcassets */; };
 		0C00E8DD213AAAA900F29F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C00E8DB213AAAA900F29F2A /* LaunchScreen.storyboard */; };
+		28F4BA1B8CC86337F2660BE9 /* Pods_Hypertrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C88E06954DF682377737CF /* Pods_Hypertrack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0C00E8D9213AAAA900F29F2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C00E8DC213AAAA900F29F2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C00E8DE213AAAA900F29F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		236EDD2A09F73DCCC21B6F18 /* Pods-Hypertrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypertrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hypertrack/Pods-Hypertrack.release.xcconfig"; sourceTree = "<group>"; };
+		44C88E06954DF682377737CF /* Pods_Hypertrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hypertrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA3BA8F4B356D6C39CF3DFE /* Pods-Hypertrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypertrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypertrack/Pods-Hypertrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F4BA1B8CC86337F2660BE9 /* Pods_Hypertrack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0C00E8D1213AAAA700F29F2A /* Hypertrack */,
 				0C00E8D0213AAAA700F29F2A /* Products */,
+				F9A32DC3B8ABE58C4FF5A231 /* Pods */,
+				543C9FC5B6F5FF5EEA351D41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Hypertrack;
 			sourceTree = "<group>";
 		};
+		543C9FC5B6F5FF5EEA351D41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44C88E06954DF682377737CF /* Pods_Hypertrack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9A32DC3B8ABE58C4FF5A231 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AA3BA8F4B356D6C39CF3DFE /* Pods-Hypertrack.debug.xcconfig */,
+				236EDD2A09F73DCCC21B6F18 /* Pods-Hypertrack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C00E8E1213AAAA900F29F2A /* Build configuration list for PBXNativeTarget "Hypertrack" */;
 			buildPhases = (
+				4180124DAA1DAE54DEEF2F1F /* [CP] Check Pods Manifest.lock */,
 				0C00E8CB213AAAA700F29F2A /* Sources */,
 				0C00E8CC213AAAA700F29F2A /* Frameworks */,
 				0C00E8CD213AAAA700F29F2A /* Resources */,
+				8B3ADB70D9C57DC7AF169FBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +122,11 @@
 				TargetAttributes = {
 					0C00E8CE213AAAA700F29F2A = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -129,6 +160,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4180124DAA1DAE54DEEF2F1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hypertrack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3ADB70D9C57DC7AF169FBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hypertrack/Pods-Hypertrack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GzipSwift/Gzip.framework",
+				"${BUILT_PRODUCTS_DIR}/HyperTrack/HyperTrack.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gzip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperTrack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypertrack/Pods-Hypertrack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C00E8CB213AAAA700F29F2A /* Sources */ = {
@@ -278,6 +354,7 @@
 		};
 		0C00E8E2213AAAA900F29F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA3BA8F4B356D6C39CF3DFE /* Pods-Hypertrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +373,7 @@
 		};
 		0C00E8E3213AAAA900F29F2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 236EDD2A09F73DCCC21B6F18 /* Pods-Hypertrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
